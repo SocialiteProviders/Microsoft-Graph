@@ -102,19 +102,19 @@ class Provider extends AbstractProvider implements ProviderInterface
         */
         return (new User())->setRaw($user)->map([
             'id'                => $user['id'],
-            'name'              => $user['displayName'],
-            'email'             => $user['mail'],
+            'name'              => array_get($user, 'displayName'),
+            'email'             => array_get($user, 'mail'),
 
-            'businessPhones'    => $user['businessPhones'],
-            'displayName'       => $user['displayName'],
-            'givenName'         => $user['givenName'],
-            'jobTitle'          => $user['jobTitle'],
-            'mail'              => $user['mail'],
-            'mobilePhone'       => $user['mobilePhone'],
-            'officeLocation'    => $user['officeLocation'],
-            'preferredLanguage' => $user['preferredLanguage'],
-            'surname'           => $user['surname'],
-            'userPrincipalName' => $user['userPrincipalName'],
+            'businessPhones'    => array_get($user, 'businessPhones'),
+            'displayName'       => array_get($user, 'displayName'),
+            'givenName'         => array_get($user, 'givenName'),
+            'jobTitle'          => array_get($user, 'jobTitle'),
+            'mail'              => array_get($user, 'mail'),
+            'mobilePhone'       => array_get($user, 'mobilePhone'),
+            'officeLocation'    => array_get($user, 'officeLocation'),
+            'preferredLanguage' => array_get($user, 'preferredLanguage'),
+            'surname'           => array_get($user, 'surname'),
+            'userPrincipalName' => array_get($user, 'userPrincipalName'),
         ]);
     }
 
